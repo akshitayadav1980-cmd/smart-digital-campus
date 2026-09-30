@@ -1,0 +1,16 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { LandingPage } from './pages/LandingPage';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        {/* Redirect any other path back to landing page */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
